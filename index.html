@@ -4,9 +4,93 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="./favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>goit-js-hw-02</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Aquarium</title>
   </head>
+
   <body>
+        <div class="ecosystem-container">
+        <h2 class="section-title">Візуальна модель екосистеми</h2>
+        <p class="descr-title">Денис Байрачний Development</p>
+        
+        <div class="aquarium-visual" id="aquarium">
+            <div class="water-surface"></div>
+            <div class="substrate"></div>
+            
+            <!-- Рослини -->
+            <div class="plant" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="plant" style="left: 25%; height: 60px; animation-delay: 0.5s;"></div>
+            <div class="plant" style="left: 40%; height: 70px; animation-delay: 1s;"></div>
+            <div class="plant" style="left: 75%; animation-delay: 1.5s;"></div>
+            <div class="plant" style="left: 90%; height: 65px; animation-delay: 2s;"></div>
+            
+            <!-- Водорості -->
+            <div class="algae" style="left: 15%; animation-delay: 0.2s;"></div>
+            <div class="algae" style="left: 55%; animation-delay: 0.8s;"></div>
+            <div class="algae" style="left: 85%; animation-delay: 1.3s;"></div>
+            
+            <!-- Риби -->
+            <div class="fish organism" style="top: 30%; left: 20%; animation-delay: 0s;"></div>
+            <div class="fish organism" style="top: 45%; left: 60%; animation-delay: 0.7s;"></div>
+            <div class="fish organism" style="top: 25%; left: 80%; animation-delay: 1.2s;"></div>
+            
+            <div class="fish small organism" style="top: 35%; left: 15%; animation-delay: 0.3s;"></div>
+            <div class="fish small organism" style="top: 40%; left: 18%; animation-delay: 0.5s;"></div>
+            <div class="fish small organism" style="top: 38%; left: 22%; animation-delay: 0.8s;"></div>
+            
+            <div class="fish predator organism" style="top: 60%; left: 45%; animation-delay: 1.5s;"></div>
+            
+            <!-- Бульбашки -->
+            <div class="bubble" style="left: 30%; animation-delay: 0s;"></div>
+            <div class="bubble" style="left: 70%; animation-delay: 1s;"></div>
+            <div class="bubble" style="left: 50%; animation-delay: 2s;"></div>
+        </div>
+        
+        <!-- Панель управління -->
+        <div class="control-panel">
+            <div class="control-item">
+                <h3>🌡️ Температура</h3>
+                <div class="parameter">
+                    <span>Поточна:</span>
+                    <span class="status optimal" id="temp-current">24°C</span>
+                </div>
+                <div class="parameter">
+                    <span>Цільова:</span>
+                    <span>22-26°C</span>
+                </div>
+            </div>
+            
+            <div class="control-item">
+                <h3>💧 pH рівень</h3>
+                <div class="parameter">
+                    <span>Поточний:</span>
+                    <span class="status optimal" id="ph-current">7.2</span>
+                </div>
+                <div class="parameter">
+                    <span>Цільовий:</span>
+                    <span>6.8-7.5</span>
+                </div>
+            </div>
+            
+            <div class="control-item">
+                <h3>🫧 Кисень</h3>
+                <div class="parameter">
+                    <span>Рівень:</span>
+                    <span class="status optimal" id="oxygen-current">8.5 мг/л</span>
+                </div>
+                <div class="parameter">
+                    <span>Мін. рівень:</span>
+                    <span>6.0 мг/л</span>
+                </div>
+            </div>
+            
+            <div class="control-item">
+                <h3>💡 Освітлення</h3>
+                <div class="parameter">
+                    <span>Інтенсивність:</span>
+                    <span class="status optimal" id="light-current">75%</span>
+                </div>
+
     <script src="./js/task-1.js"></script>
     <script src="./js/task-2.js"></script>
     <script src="./js/task-3.js"></script>

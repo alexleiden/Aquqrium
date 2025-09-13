@@ -1,0 +1,484 @@
+
+/* Базові стилі */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+  .descr-title {
+    text-align: center;
+    font-size: 36px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#1F4F2F;
+    text-decoration: underline;
+    
+}
+
+body {
+font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+
+min-height: 100vh;
+color: #333;
+line-height: 1.6;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+
+/* Заголовки */
+h1 {
+text-align: center;
+color: white;
+margin-bottom: 30px;
+font-size: 2.5em;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+font-weight: 300;
+}
+
+.section-title {
+text-align: center;
+color: #2C3E50;
+margin: 30px 0 20px 0;
+font-size: 1.8em;
+font-weight: 400;
+}
+
+/* Основний контейнер */
+.ecosystem-container {
+background: rgba(255, 255, 255, 0.95);
+border-radius: 20px;
+padding: 30px;
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Акваріум */
+.aquarium-visual {
+position: relative;
+width: 100%;
+height: 500px;
+background: linear-gradient(to bottom,
+#87CEEB 0%,
+#4682B4 30%,
+#2E8B57 60%,
+#1F4F2F 100%);
+border: 8px solid #8B4513;
+border-radius: 15px;
+margin: 30px 0;
+overflow: hidden;
+box-shadow:
+inset 0 0 50px rgba(0,0,0,0.2),
+0 10px 30px rgba(0,0,0,0.3);
+}
+
+.water-surface {
+position: absolute;
+top: 0;
+width: 100%;
+height: 20px;
+background: linear-gradient(90deg,
+transparent 0%,
+rgba(255,255,255,0.3) 25%,
+rgba(255,255,255,0.6) 50%,
+rgba(255,255,255,0.3) 75%,
+transparent 100%);
+animation: wave 3s ease-in-out infinite;
+}
+
+@keyframes wave {
+0%, 100% { transform: translateX(-10px); }
+50% { transform: translateX(10px); }
+}
+
+/* Організми */
+.organism {
+position: absolute;
+border-radius: 50%;
+animation: float 4s ease-in-out infinite;
+transition: all 0.3s ease;
+}
+
+.organism:hover {
+transform: scale(1.1);
+filter: brightness(1.2);
+}
+
+@keyframes float {
+0%, 100% { transform: translateY(0px) rotate(0deg); }
+50% { transform: translateY(-10px) rotate(5deg); }
+}
+/* Риби */
+.fish {
+width: 40px;
+height: 25px;
+background: #FF6B6B;
+border-radius: 50% 10px 50% 10px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+position: relative;
+}
+
+.fish::after {
+content: ‘’;
+position: absolute;
+right: -8px;
+top: 50%;
+transform: translateY(-50%);
+width: 0;
+height: 0;
+border-left: 12px solid #FF6B6B;
+border-top: 8px solid transparent;
+border-bottom: 8px solid transparent;
+}
+
+.fish.small {
+width: 20px;
+height: 12px;
+background: #4ECDC4;
+}
+
+.fish.small::after {
+border-left: 8px solid #4ECDC4;
+border-top: 4px solid transparent;
+border-bottom: 4px solid transparent;
+right: -5px;
+}
+
+.fish.predator {
+width: 60px;
+height: 35px;
+background: #45B7D1;
+}
+
+.fish.predator::after {
+border-left: 15px solid #45B7D1;
+border-top: 12px solid transparent;
+border-bottom: 12px solid transparent;
+right: -10px;
+}
+
+/* Рослини */
+.plant {
+width: 15px;
+height: 80px;
+background: linear-gradient(to top, #228B22, #32CD32);
+border-radius: 50% 50% 0 0;
+bottom: 40px;
+position: absolute;
+box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+.algae {
+width: 8px;
+height: 40px;
+background: linear-gradient(to top, #90EE90, #98FB98);
+border-radius: 50% 50% 0 0;
+bottom: 40px;
+position: absolute;
+box-shadow: 1px 0 4px rgba(0,0,0,0.2);
+}
+
+/* Субстрат */
+.substrate {
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 40px;
+background: linear-gradient(to top, #8B4513, #D2691E);
+border-radius: 0 0 7px 7px;
+box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Бульбашки */
+.bubble {
+position: absolute;
+width: 6px;
+height: 6px;
+background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+border-radius: 50%;
+animation: rise 3s linear infinite;
+box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes rise {
+0% {
+bottom: 40px;
+opacity: 0;
+transform: scale(0.5);
+}
+20% {
+opacity: 1;
+transform: scale(1);
+}
+80% {
+opacity: 0.8;
+transform: scale(1.2);
+}
+100% {
+bottom: 100%;
+opacity: 0;
+transform: scale(0.8);
+}
+}
+
+/* Панель управління */
+.control-panel {
+background: linear-gradient(135deg, #2C3E50, #34495E);
+color: white;
+padding: 25px;
+border-radius: 15px;
+margin: 25px 0;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+
+}
+
+.control-item {
+background: linear-gradient(135deg, #34495E, #2C3E50);
+padding: 20px;
+border-radius: 12px;
+text-align: center;
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.control-item:hover {
+transform: translateY(-3px);
+box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.control-item h3 {
+color: #3498DB;
+margin-bottom: 15px;
+font-size: 1.2em;
+font-weight: 500;
+}
+
+.parameter {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 10px 0;
+padding: 10px;
+background: rgba(52, 152, 219, 0.1);
+border-radius: 8px;
+border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.status {
+padding: 5px 12px;
+border-radius: 15px;
+font-size: 0.9em;
+font-weight: bold;
+text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+transition: all 0.3s ease;
+}
+
+.optimal {
+background: linear-gradient(135deg, #27AE60, #2ECC71);
+color: white;
+box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+}
+
+.warning {
+background: linear-gradient(135deg, #F39C12, #E67E22);
+color: white;
+box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
+}
+
+/* Сітка видів */
+.species-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 25px;
+margin: 30px 0;
+}
+
+.species-card {
+background: linear-gradient(135deg, white, #f8f9fa);
+border-radius: 15px;
+padding: 25px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+border: 1px solid rgba(52, 152, 219, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+
+.species-card::before {
+content: ‘’;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 4px;
+background: linear-gradient(90deg, #3498DB, #2ECC71, #E74C3C, #8E44AD);
+}
+
+.species-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.species-card h3 {
+color: #2C3E50;
+margin-bottom: 20px;
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 1.3em;
+font-weight: 600;
+}
+
+/* Іконки */
+.icon {
+width: 35px;
+height: 35px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-weight: bold;
+font-size: 1.1em;
+box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.producer { background: linear-gradient(135deg, #27AE60, #2ECC71); }
+.primary { background: linear-gradient(135deg, #3498DB, #5DADE2); }
+.secondary { background: linear-gradient(135deg, #E74C3C, #EC7063); }
+.decomposer { background: linear-gradient(135deg, #8E44AD, #BB8FCE); }
+
+/* Список видів */
+.species-list {
+list-style: none;
+}
+
+.species-list li {
+padding: 12px 0;
+border-bottom: 1px solid #ECF0F1;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: background-color 0.3s ease;
+}
+
+.species-list li:hover {
+background-color: rgba(52, 152, 219, 0.05);
+border-radius: 8px;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.species-list li:last-child {
+border-bottom: none;
+}
+
+.population {
+background: linear-gradient(135deg, #ECF0F1, #D5DBDB);
+padding: 6px 12px;
+border-radius: 12px;
+font-size: 0.85em;
+color: #7F8C8D;
+font-weight: 500;
+box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Секція автоматизації */
+.automation-section {
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+color: white;
+padding: 35px;
+border-radius: 20px;
+margin: 35px 0;
+box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.automation-section h2 {
+text-align: center;
+margin-bottom: 25px;
+font-size: 2em;
+font-weight: 300;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.automation-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 25px;
+margin-top: 25px;
+}
+
+.automation-card {
+background: rgba(255, 255, 255, 0.15);
+padding: 25px;
+border-radius: 15px;
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.2);
+transition: transform 0.3s ease;
+}
+
+.automation-card:hover {
+transform: translateY(-3px);
+background: rgba(255, 255, 255, 0.2);
+}
+
+.automation-card h3 {
+margin-bottom: 15px;
+font-size: 1.3em;
+font-weight: 500;
+}
+
+.automation-card p {
+margin: 10px 0;
+display: flex;
+align-items: center;
+line-height: 1.5;
+}
+
+/* Індикатори датчиків */
+.sensor-indicator {
+display: inline-block;
+width: 12px;
+height: 12px;
+
+
+border-radius: 50%;
+margin-right: 10px;
+animation: pulse 2s infinite;
+box-shadow: 0 0 8px currentColor;
+}
+
+@keyframes pulse {
+0%, 100% {
+opacity: 1;
+transform: scale(1);
+}
+50% {
+opacity: 0.6;
+transform: scale(1.1);
+}
+}
+
+.active {
+background: #27AE60;
+box-shadow: 0 0 10px #27AE60;
+}
+
+.standby {
+background: #F39C12;
+box-shadow: 0 0 10px #F39C12;
+}
+
+/* Секція принципів */
+.principles-section {
+background: linear-gradient(135deg, #ECF0F1, #F8F9FA);
