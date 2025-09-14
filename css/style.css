@@ -1,484 +1,534 @@
-
-/* Базові стилі */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  }
-
-  .descr-title {
-    text-align: center;
-    font-size: 36px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color:#1F4F2F;
-    text-decoration: underline;
-    
 }
 
 body {
-font-family: ‘Segoe UI’, Tahoma, Geneva, Verdana, sans-serif;
-background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-
-min-height: 100vh;
-color: #333;
-line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
 }
 
 .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Заголовки */
 h1 {
-text-align: center;
-color: white;
-margin-bottom: 30px;
-font-size: 2.5em;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-font-weight: 300;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 300;
+}
+
+.descr-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #1f4f2f;
+  text-decoration: underline;
 }
 
 .section-title {
-text-align: center;
-color: #2C3E50;
-margin: 30px 0 20px 0;
-font-size: 1.8em;
-font-weight: 400;
+  text-align: center;
+  color: #2c3e50;
+  margin: 30px 0 20px 0;
+  font-size: 1.8em;
+  font-weight: 400;
 }
 
-/* Основний контейнер */
 .ecosystem-container {
-background: rgba(255, 255, 255, 0.95);
-border-radius: 20px;
-padding: 30px;
-box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Акваріум */
 .aquarium-visual {
-position: relative;
-width: 100%;
-height: 500px;
-background: linear-gradient(to bottom,
-#87CEEB 0%,
-#4682B4 30%,
-#2E8B57 60%,
-#1F4F2F 100%);
-border: 8px solid #8B4513;
-border-radius: 15px;
-margin: 30px 0;
-overflow: hidden;
-box-shadow:
-inset 0 0 50px rgba(0,0,0,0.2),
-0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(
+    to bottom,
+    #87ceeb 0%,
+    #4682b4 30%,
+    #2e8b57 60%,
+    #1f4f2f 100%
+  );
+  border: 8px solid #8b4513;
+  border-radius: 15px;
+  margin: 30px 0;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2), 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .water-surface {
-position: absolute;
-top: 0;
-width: 100%;
-height: 20px;
-background: linear-gradient(90deg,
-transparent 0%,
-rgba(255,255,255,0.3) 25%,
-rgba(255,255,255,0.6) 50%,
-rgba(255,255,255,0.3) 75%,
-transparent 100%);
-animation: wave 3s ease-in-out infinite;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 25%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.3) 75%,
+    transparent 100%
+  );
+  animation: wave 3s ease-in-out infinite;
 }
 
 @keyframes wave {
-0%, 100% { transform: translateX(-10px); }
-50% { transform: translateX(10px); }
+  0%,
+  100% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
 }
 
-/* Організми */
+.substrate {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top, #8b4513, #d2691e);
+  border-radius: 0 0 7px 7px;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
 .organism {
-position: absolute;
-border-radius: 50%;
-animation: float 4s ease-in-out infinite;
-transition: all 0.3s ease;
+  position: absolute;
+  animation: float 4s ease-in-out infinite;
+  transition: all 0.3s ease;
 }
 
 .organism:hover {
-transform: scale(1.1);
-filter: brightness(1.2);
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 @keyframes float {
-0%, 100% { transform: translateY(0px) rotate(0deg); }
-50% { transform: translateY(-10px) rotate(5deg); }
-}
-/* Риби */
-.fish {
-width: 40px;
-height: 25px;
-background: #FF6B6B;
-border-radius: 50% 10px 50% 10px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-position: relative;
-}
-
-.fish::after {
-content: ‘’;
-position: absolute;
-right: -8px;
-top: 50%;
-transform: translateY(-50%);
-width: 0;
-height: 0;
-border-left: 12px solid #FF6B6B;
-border-top: 8px solid transparent;
-border-bottom: 8px solid transparent;
-}
-
-.fish.small {
-width: 20px;
-height: 12px;
-background: #4ECDC4;
-}
-
-.fish.small::after {
-border-left: 8px solid #4ECDC4;
-border-top: 4px solid transparent;
-border-bottom: 4px solid transparent;
-right: -5px;
-}
-
-.fish.predator {
-width: 60px;
-height: 35px;
-background: #45B7D1;
-}
-
-.fish.predator::after {
-border-left: 15px solid #45B7D1;
-border-top: 12px solid transparent;
-border-bottom: 12px solid transparent;
-right: -10px;
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
 }
 
 /* Рослини */
 .plant {
-width: 15px;
-height: 80px;
-background: linear-gradient(to top, #228B22, #32CD32);
-border-radius: 50% 50% 0 0;
-bottom: 40px;
-position: absolute;
-box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  width: 15px;
+  height: 80px;
+  background: linear-gradient(to top, #228b22, #32cd32);
+  border-radius: 50% 50% 0 0;
+  bottom: 40px;
+  position: absolute;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .algae {
-width: 8px;
-height: 40px;
-background: linear-gradient(to top, #90EE90, #98FB98);
-border-radius: 50% 50% 0 0;
-bottom: 40px;
-position: absolute;
-box-shadow: 1px 0 4px rgba(0,0,0,0.2);
+  width: 8px;
+  height: 40px;
+  background: linear-gradient(to top, #90ee90, #98fb98);
+  border-radius: 50% 50% 0 0;
+  bottom: 40px;
+  position: absolute;
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Субстрат */
-.substrate {
-position: absolute;
-bottom: 0;
-width: 100%;
-height: 40px;
-background: linear-gradient(to top, #8B4513, #D2691E);
-border-radius: 0 0 7px 7px;
-box-shadow: inset 0 5px 10px rgba(0,0,0,0.3);
+/* Продуценти */
+.producer-component {
+  position: absolute;
+  width: 12px;
+  height: 60px;
+  background: linear-gradient(to top, #2e8b57, #00ff7f, #90ee90);
+  border-radius: 50% 50% 20% 20%;
+  bottom: 40px;
+  box-shadow: 0 0 8px rgba(46, 139, 87, 0.6);
+  animation: photosynthesis 3s ease-in-out infinite;
+}
+
+@keyframes photosynthesis {
+  0%,
+  100% {
+    filter: brightness(1);
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.6);
+  }
+  50% {
+    filter: brightness(1.3);
+    box-shadow: 0 0 15px rgba(144, 238, 144, 0.8);
+  }
+}
+
+.phytoplankton {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #32cd32, #228b22);
+  border-radius: 50%;
+  animation: drift 6s linear infinite;
+  box-shadow: 0 0 4px rgba(50, 205, 50, 0.7);
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(0px) translateY(-10px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+/* Риби */
+.fish {
+  width: 40px;
+  height: 25px;
+  background: #ff6b6b;
+  border-radius: 50% 10px 50% 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.fish::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid #ff6b6b;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.fish.small {
+  width: 20px;
+  height: 12px;
+  background: #4ecdc4;
+}
+
+.fish.small::after {
+  border-left: 8px solid #4ecdc4;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  right: -5px;
+}
+
+.fish.predator {
+  width: 60px;
+  height: 35px;
+  background: #45b7d1;
+}
+
+.fish.predator::after {
+  border-left: 15px solid #45b7d1;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  right: -10px;
+}
+
+/* Первинні консументи */
+.primary-consumer {
+  position: absolute;
+  width: 25px;
+  height: 15px;
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  border-radius: 60% 40% 60% 40%;
+  box-shadow: 0 2px 6px rgba(255, 165, 0, 0.4);
+  animation: graze 4s ease-in-out infinite;
+}
+
+.primary-consumer::before {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid #ffd700;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+@keyframes graze {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+/* Вторинні консументи */
+.secondary-consumer {
+  position: absolute;
+  width: 45px;
+  height: 28px;
+  background: linear-gradient(135deg, #dc143c, #b22222);
+  border-radius: 50% 10% 50% 10%;
+  box-shadow: 0 3px 10px rgba(220, 20, 60, 0.4);
+  animation: hunt 5s ease-in-out infinite;
+}
+
+.secondary-consumer::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid #dc143c;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+@keyframes hunt {
+  0%,
+  70%,
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateX(15px) rotate(5deg);
+  }
+  40% {
+    transform: translateX(-10px) rotate(-3deg);
+  }
+}
+
+/* Редуценти */
+.decomposer {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #8b4513, #654321);
+  border-radius: 50%;
+  bottom: 40px;
+  animation: decompose 2s ease-in-out infinite;
+  box-shadow: 0 0 3px rgba(139, 69, 19, 0.5);
+}
+
+@keyframes decompose {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+    box-shadow: 0 0 6px rgba(139, 69, 19, 0.8);
+  }
+}
+
+.bacteria {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #8b4513;
+  border-radius: 50%;
+  animation: bacterial-activity 1.5s linear infinite;
+  box-shadow: 0 0 2px rgba(139, 69, 19, 0.6);
+}
+
+@keyframes bacterial-activity {
+  0% {
+    transform: rotate(0deg) translateX(5px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(5px);
+  }
+}
+
+.detritus {
+  position: absolute;
+  width: 6px;
+  height: 3px;
+  background: #8b7355;
+  border-radius: 30%;
+  bottom: 42px;
+  opacity: 0.6;
+  animation: settle 4s ease-in-out infinite;
+}
+
+@keyframes settle {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 /* Бульбашки */
 .bubble {
-position: absolute;
-width: 6px;
-height: 6px;
-background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
-border-radius: 50%;
-animation: rise 3s linear infinite;
-box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 50%;
+  animation: rise 3s linear infinite;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes rise {
-0% {
-bottom: 40px;
-opacity: 0;
-transform: scale(0.5);
-}
-20% {
-opacity: 1;
-transform: scale(1);
-}
-80% {
-opacity: 0.8;
-transform: scale(1.2);
-}
-100% {
-bottom: 100%;
-opacity: 0;
-transform: scale(0.8);
-}
+  0% {
+    bottom: 40px;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
 }
 
 /* Панель управління */
 .control-panel {
-background: linear-gradient(135deg, #2C3E50, #34495E);
-color: white;
-padding: 25px;
-border-radius: 15px;
-margin: 25px 0;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 20px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-
-
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .control-item {
-background: linear-gradient(135deg, #34495E, #2C3E50);
-padding: 20px;
-border-radius: 12px;
-text-align: center;
-border: 1px solid rgba(255, 255, 255, 0.1);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .control-item:hover {
-transform: translateY(-3px);
-box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .control-item h3 {
-color: #3498DB;
-margin-bottom: 15px;
-font-size: 1.2em;
-font-weight: 500;
+  color: #3498db;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
 .parameter {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin: 10px 0;
-padding: 10px;
-background: rgba(52, 152, 219, 0.1);
-border-radius: 8px;
-border: 1px solid rgba(52, 152, 219, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(52, 152, 219, 0.2);
 }
 
 .status {
-padding: 5px 12px;
-border-radius: 15px;
-font-size: 0.9em;
-font-weight: bold;
-text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-transition: all 0.3s ease;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
 .optimal {
-background: linear-gradient(135deg, #27AE60, #2ECC71);
-color: white;
-box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
 }
 
-.warning {
-background: linear-gradient(135deg, #F39C12, #E67E22);
-color: white;
-box-shadow: 0 2px 8px rgba(243, 156, 18, 0.3);
+.legend {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 25px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Сітка видів */
-.species-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 25px;
-margin: 30px 0;
+.legend h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+  text-align: center;
 }
 
-.species-card {
-background: linear-gradient(135deg, white, #f8f9fa);
-border-radius: 15px;
-padding: 25px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-border: 1px solid rgba(52, 152, 219, 0.1);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-position: relative;
-overflow: hidden;
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
 }
 
-.species-card::before {
-content: ‘’;
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: linear-gradient(90deg, #3498DB, #2ECC71, #E74C3C, #8E44AD);
+.legend-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.species-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.species-card h3 {
-color: #2C3E50;
-margin-bottom: 20px;
-display: flex;
-align-items: center;
-gap: 12px;
-font-size: 1.3em;
-font-weight: 600;
+.producer-color {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
 }
-
-/* Іконки */
-.icon {
-width: 35px;
-height: 35px;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-font-weight: bold;
-font-size: 1.1em;
-box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+.primary-color {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
 }
-
-.producer { background: linear-gradient(135deg, #27AE60, #2ECC71); }
-.primary { background: linear-gradient(135deg, #3498DB, #5DADE2); }
-.secondary { background: linear-gradient(135deg, #E74C3C, #EC7063); }
-.decomposer { background: linear-gradient(135deg, #8E44AD, #BB8FCE); }
-
-/* Список видів */
-.species-list {
-list-style: none;
+.secondary-color {
+  background: linear-gradient(135deg, #dc143c, #b22222);
 }
-
-.species-list li {
-padding: 12px 0;
-border-bottom: 1px solid #ECF0F1;
-display: flex;
-justify-content: space-between;
-align-items: center;
-transition: background-color 0.3s ease;
+.decomposer-color {
+  background: linear-gradient(135deg, #8b4513, #654321);
 }
-
-.species-list li:hover {
-background-color: rgba(52, 152, 219, 0.05);
-border-radius: 8px;
-padding-left: 10px;
-padding-right: 10px;
-}
-
-.species-list li:last-child {
-border-bottom: none;
-}
-
-.population {
-background: linear-gradient(135deg, #ECF0F1, #D5DBDB);
-padding: 6px 12px;
-border-radius: 12px;
-font-size: 0.85em;
-color: #7F8C8D;
-font-weight: 500;
-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-}
-
-/* Секція автоматизації */
-.automation-section {
-background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-color: white;
-padding: 35px;
-border-radius: 20px;
-margin: 35px 0;
-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.automation-section h2 {
-text-align: center;
-margin-bottom: 25px;
-font-size: 2em;
-font-weight: 300;
-text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.automation-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-gap: 25px;
-margin-top: 25px;
-}
-
-.automation-card {
-background: rgba(255, 255, 255, 0.15);
-padding: 25px;
-border-radius: 15px;
-backdrop-filter: blur(10px);
-border: 1px solid rgba(255, 255, 255, 0.2);
-transition: transform 0.3s ease;
-}
-
-.automation-card:hover {
-transform: translateY(-3px);
-background: rgba(255, 255, 255, 0.2);
-}
-
-.automation-card h3 {
-margin-bottom: 15px;
-font-size: 1.3em;
-font-weight: 500;
-}
-
-.automation-card p {
-margin: 10px 0;
-display: flex;
-align-items: center;
-line-height: 1.5;
-}
-
-/* Індикатори датчиків */
-.sensor-indicator {
-display: inline-block;
-width: 12px;
-height: 12px;
-
-
-border-radius: 50%;
-margin-right: 10px;
-animation: pulse 2s infinite;
-box-shadow: 0 0 8px currentColor;
-}
-
-@keyframes pulse {
-0%, 100% {
-opacity: 1;
-transform: scale(1);
-}
-50% {
-opacity: 0.6;
-transform: scale(1.1);
-}
-}
-
-.active {
-background: #27AE60;
-box-shadow: 0 0 10px #27AE60;
-}
-
-.standby {
-background: #F39C12;
-box-shadow: 0 0 10px #F39C12;
-}
-
-/* Секція принципів */
-.principles-section {
-background: linear-gradient(135deg, #ECF0F1, #F8F9FA);
