@@ -505,7 +505,7 @@ h1 {
 
 .legend-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 12px;
   background: white;
   border-radius: 10px;
@@ -517,6 +517,8 @@ h1 {
   height: 20px;
   border-radius: 50%;
   margin-right: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
